@@ -7,7 +7,7 @@ function vector(x,y,z){
     this.x = x.x;
     this.y = x.y;
     this.z = x.z;
-  }else if(arguments.length===1){//in case of new vector(<number>) creates a length 1 vector using angle <number> and sets x to angle
+  }else if(arguments.length===1){//in case of new vector(<number>) creates a vector using angle <number> and sets x to angle
     this.x = Math.cos(x);
     this.y = Math.sin(x);
     this.z = x;
@@ -23,6 +23,7 @@ vector.prototype=Object.assign(vector.prototype,{
     return this;
   },
   sub(x,y,z){
+    //establish b as a useable datatype to prevent error by running it through new vector()
     var b = new vector(x,y,z);
     this.x-=b.x;
     this.y-=b.y;
@@ -30,6 +31,7 @@ vector.prototype=Object.assign(vector.prototype,{
     return this;
   },
   mult(x,y,z){
+    //establish b as a useable datatype to prevent error by running it through new vector()
     var b = new vector(x,y,z);
     this.x*=b.x;
     this.y*=b.y;
@@ -37,6 +39,7 @@ vector.prototype=Object.assign(vector.prototype,{
     return this;
   },
   dist(x,y,z){
+    //establish b as a useable datatype to prevent error by running it through new vector()
     var b = new vector(x,y,z);
     var dx = this.x-b.x;
     var dy = this.y-b.y;
@@ -44,6 +47,7 @@ vector.prototype=Object.assign(vector.prototype,{
     return Math.pow(Math.pow(dx,2)+Math.pow(dy,2)+Math.pow(dz,2),1/3);
   },
   avg(){
-    return (this.x+this.y+this.z)/3;
+    //take average of all inputed values
+    return (this.x+this.y+this.z)/this.length;
   }
 });
