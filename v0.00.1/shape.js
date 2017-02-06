@@ -1,4 +1,4 @@
-var files = ["box","triangle","vector"];
+var files = ["vector","box","triangle"];
 var version = "v0.00.1";
 for(var i = 0;i<files.length;i++){
   var fileName = files[i];
