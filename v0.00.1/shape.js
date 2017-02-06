@@ -6,4 +6,5 @@ for(var i = 0;i<files.length;i++){
   var script = document.createElement("script");
   script.setAttribute("src",src);
   document.head.appendChild(script);
+  console.log("loading "+files[i]+" from "+src);
 }
