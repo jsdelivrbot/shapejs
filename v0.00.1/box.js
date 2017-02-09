@@ -7,7 +7,7 @@ function box(x,y,w,h){
 box.prototype = Object.assign(box.prototype,{
   collide(other){
     var response = new SAT.Response();
-    var collided = SAT.testPolygonPolygon(this.mask,other, response);
+    var collided = SAT.testPolygonPolygon(this.mask,other.mask, response);
     return {response:response,isColliding:collided}
   }
 });
