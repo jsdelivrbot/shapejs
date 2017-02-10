@@ -9,5 +9,8 @@ box.prototype = Object.assign(box.prototype,{
     var response = new SAT.Response();
     var collided = SAT.testPolygonPolygon(this.mask,other.mask, response);
     return {response:response,isColliding:collided}
+  },
+  pointInShape(point){
+    return SAT.pointInPolygon(p,this.mesh);
   }
 });
