@@ -1,6 +1,7 @@
-function box(x,y,w,h){
+function box(x,y,w,h,tags){
   this.size = new vector(x,y);
   this.pos = new vector(w,h);
+  this.tags=tags;
   this.mask = new SAT.Polygon(new SAT.V(this.pos.x,this.pos.y),[new SAT.V(0,0),new SAT.V(0,this.size.y),new SAT.V(this.size.x,this.size.y),new SAT.V(this.size.x,0)]);
   //constructor contains size<vector> and pos<vector>
 }
